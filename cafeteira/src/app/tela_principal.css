@@ -14,9 +14,15 @@ body {
 .footer, .header {
 	background:#0B7197;
     height: 7%;
+    display: flex;
 }
 
 .main {
     flex-grow: 1;
     flex-shrink: 0;
+}
+
+.align-center {
+    align-items: center;
+    justify-content: center;
 }
