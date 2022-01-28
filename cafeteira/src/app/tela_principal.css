@@ -1,6 +1,7 @@
 body {
     background-color: #135E8E;
     margin: 0;
+    font-size: 30px;
 }
 
 div {
@@ -9,6 +10,9 @@ div {
     width: 40%;
     margin: 5%;
     padding: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .border {
@@ -19,7 +23,7 @@ div {
 
 .font {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 20px;
+    font-size: 50%;
     font-weight: bold;
     color: white;
 }
