@@ -7,7 +7,7 @@ import { CoffeeStatus_e } from '../../../../../common/enum';
 })
 export class MainCoffeeComponent implements OnInit {
 
-  coffeeMakerStatus: CoffeeStatus_e = CoffeeStatus_e.NoCoffee;
+  coffeeMakerStatus: CoffeeStatus_e;
   coffeeMakerStatus_text: string;
   coffeeMakerStatus_color: string;
   coffeeTimer_ms: number = (5 * 1000);
@@ -15,10 +15,11 @@ export class MainCoffeeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.formatCoffeeStatus();
+    this.formatCoffeeStatus(CoffeeStatus_e.NoCoffee);
   }
 
-  formatCoffeeStatus() {
+  formatCoffeeStatus(coffeeStatus: CoffeeStatus_e) {
+    this.coffeeMakerStatus = coffeeStatus;
     this.coffeeMakerStatus_text = this.getStatusText(this.coffeeMakerStatus).toUpperCase();
     this.coffeeMakerStatus_color = this.getStatusColor(this.coffeeMakerStatus);
   }
@@ -46,11 +47,9 @@ export class MainCoffeeComponent implements OnInit {
   }
 
   passCoffee() {
-    this.coffeeMakerStatus = CoffeeStatus_e.PassingCoffee;
-    this.formatCoffeeStatus();
+    this.formatCoffeeStatus(CoffeeStatus_e.PassingCoffee);
     setTimeout(() => {
-      this.coffeeMakerStatus = CoffeeStatus_e.AvailableCoffee;
-      this.formatCoffeeStatus();
+      this.formatCoffeeStatus(CoffeeStatus_e.AvailableCoffee);
     }, this.coffeeTimer_ms);
   }
 }
