@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "coffee-manager"
+    }
+  },
+  "defaultProject": "coffee-manager",
+  "cli": {
+    "analytics": "7cebd64b-cbab-4da3-ae65-70921012e6f8"
+  }
 }
