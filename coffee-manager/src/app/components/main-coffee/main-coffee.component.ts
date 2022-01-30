@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MainCoffeeService } from '../../services/main-coffee.service';
 
 @Component({
   selector: 'app-main-coffee',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainCoffeeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private mainCoffeeService: MainCoffeeService) { }
 
   ngOnInit(): void {
+    console.log(this.mainCoffeeService.coffeeMakerName);
   }
 
 }
