@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MainCoffeeService } from '../../services/main-coffee.service';
 
 @Component({
@@ -9,12 +9,14 @@ import { MainCoffeeService } from '../../services/main-coffee.service';
 export class MainCoffeeComponent implements OnInit {
 
   @Input() auxData: string;
+  @Output() initMainCoffee = new EventEmitter();
 
   constructor(private mainCoffeeService: MainCoffeeService) { }
 
   ngOnInit(): void {
     console.log(this.mainCoffeeService.coffeeMakerName);
     console.log('Input auxData: ', this.auxData);
+    this.initMainCoffee.emit(true);
   }
 
 }

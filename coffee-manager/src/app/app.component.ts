@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'coffee-manager';
+
+  initMain(event) {
+    console.log('Output: ', event);
+  }
 }
