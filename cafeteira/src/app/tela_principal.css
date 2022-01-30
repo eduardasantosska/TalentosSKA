@@ -6,6 +6,7 @@ body {
     flex-direction: column;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
+    color: white;
 }
 
 p {
@@ -34,13 +35,15 @@ p {
 }
 
 .align-center {
-    align-items: center;
     justify-content: center;
 }
 
 .align-end {
-    align-items: center;
     justify-content: end;
+}
+
+.align-center, .align-end {
+    align-items: center;
 }
 
 .name-text {
@@ -50,31 +53,28 @@ p {
 
 .status-text {
     font-size: 1.2em;
-    color: white;
-    margin-right: 0.5em;
 }
 
 .qty-indicator-text {
-    color: white; 
     font-weight: normal; 
     font-size: 1.2em; 
-    margin-bottom: 2% !important;
 }
 
 .consume-btn {
-    border-radius: 5px;
     background-color: #7CB5D2;
-    border: none;
-    color: white;
-    height: 7%;
-    margin-bottom: 2% !important;
 }
 
 .pass-btn {
-    border-radius: 5px;
     background-color: #86CE84;
+}
+
+.pass-btn, .consume-btn {
+    border-radius: 5px;
     border: none;
-    color: white;
     height: 7%;
+    color: white;
+}
+
+.pass-btn, .consume-btn, .qty-indicator-text {
     margin-bottom: 2% !important;
 }
