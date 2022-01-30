@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { MainCoffeeService } from '../../services/main-coffee.service';
+import { RoutesService } from '../../services/routes.service';
 import { Events_e } from '../../../../../common/enum';
 
 @Component({
@@ -14,18 +14,12 @@ export class MainCoffeeComponent implements OnInit {
 
   status: number;
 
-  constructor(private mainCoffeeService: MainCoffeeService) { }
+  constructor(private routesService: RoutesService) { }
 
   ngOnInit(): void {
-    // Evitar as comparações com string
-    // if (this.status == 'Produção') {
-      // Algo acontece
-    // }
-
-    // Mas também deixar claro o que o status representa
-    if (this.status == Events_e.Producao) {
-      // Isso seria igual a this.status == 0
-    }
+    this.routesService.getIBGERegion().subscribe((result) => {
+      console.log(result);
+    });
   }
 
 }
