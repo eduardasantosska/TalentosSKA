@@ -6,9 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'coffee-manager';
-
-  initMain(event) {
-    console.log('Output: ', event);
-  }
 }

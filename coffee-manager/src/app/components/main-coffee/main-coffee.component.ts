@@ -1,6 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { RoutesService } from '../../services/routes.service';
-import { Events_e } from '../../../../../common/enum';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-main-coffee',
@@ -9,17 +7,9 @@ import { Events_e } from '../../../../../common/enum';
 })
 export class MainCoffeeComponent implements OnInit {
 
-  @Input() auxData: string;
-  @Output() initMainCoffee = new EventEmitter();
-
-  status: number;
-
-  constructor(private routesService: RoutesService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.routesService.getIBGERegion().subscribe((result) => {
-      console.log(result);
-    });
   }
 
 }
