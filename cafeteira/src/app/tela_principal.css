@@ -8,10 +8,15 @@ body {
     font-weight: bold;
 }
 
+p {
+    margin: 0 !important;
+}
+
 .bar-status {
     background-color: #FF6869;
     height: 7%;
     display: flex;
+    padding-right: 2%;
 }
 
 .footer, .header {
@@ -23,6 +28,9 @@ body {
 .main {
     flex-grow: 1;
     flex-shrink: 0;
+    display: flex;
+    padding: 2%;
+    flex-direction: column;
 }
 
 .align-center {
@@ -44,4 +52,29 @@ body {
     font-size: 1.2em;
     color: white;
     margin-right: 0.5em;
+}
+
+.qty-indicator-text {
+    color: white; 
+    font-weight: normal; 
+    font-size: 1.2em; 
+    margin-bottom: 2% !important;
+}
+
+.consume-btn {
+    border-radius: 5px;
+    background-color: #7CB5D2;
+    border: none;
+    color: white;
+    height: 7%;
+    margin-bottom: 2% !important;
+}
+
+.pass-btn {
+    border-radius: 5px;
+    background-color: #86CE84;
+    border: none;
+    color: white;
+    height: 7%;
+    margin-bottom: 2% !important;
 }
