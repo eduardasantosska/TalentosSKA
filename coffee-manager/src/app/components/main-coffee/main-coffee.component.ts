@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MainCoffeeService } from '../../services/main-coffee.service';
 
 @Component({
@@ -8,10 +8,13 @@ import { MainCoffeeService } from '../../services/main-coffee.service';
 })
 export class MainCoffeeComponent implements OnInit {
 
+  @Input() auxData: string;
+
   constructor(private mainCoffeeService: MainCoffeeService) { }
 
   ngOnInit(): void {
     console.log(this.mainCoffeeService.coffeeMakerName);
+    console.log('Input auxData: ', this.auxData);
   }
 
 }
