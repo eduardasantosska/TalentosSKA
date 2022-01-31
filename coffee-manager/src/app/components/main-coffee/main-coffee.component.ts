@@ -14,6 +14,11 @@ export class MainCoffeeComponent implements OnInit {
   coffeeMakerStatus_color: string;
   coffeeTimer_ms: number = (5 * 1000);
 
+  totalQtyCoffee: number;
+  actualQtyCoffee: number;
+  lastQtyCoffee: number;
+  coffeeMakerEventsList: CoffeeMakerEvents[];
+
   constructor() { }
 
   /* ngOnInit
