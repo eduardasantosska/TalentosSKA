@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CoffeeStatus_e } from '../../../../../common/enum';
 import { CoffeeMakerEvents } from '../../../../../common/models/CoffeeMakerEvents'
+import { DialogService } from '../../services/dialog.service'; 
 @Component({
   selector: 'app-main-coffee',
   templateUrl: './main-coffee.component.html',
@@ -19,7 +20,7 @@ export class MainCoffeeComponent implements OnInit {
   lastQtyCoffee: number;
   coffeeMakerEventsList: CoffeeMakerEvents[];
 
-  constructor() { }
+  constructor(private dialogService: DialogService) { }
 
   /* ngOnInit
     Função de inicialização
@@ -86,9 +87,10 @@ export class MainCoffeeComponent implements OnInit {
     Não retorna nenhum dado
   */
   passCoffee(): void {
-    this.formatCoffeeStatus(CoffeeStatus_e.PassingCoffee);
-    setTimeout(() => {
-      this.formatCoffeeStatus(CoffeeStatus_e.AvailableCoffee);
-    }, this.coffeeTimer_ms);
+    this.dialogService.openDialog();
+    // this.formatCoffeeStatus(CoffeeStatus_e.PassingCoffee);
+    // setTimeout(() => {
+    //   this.formatCoffeeStatus(CoffeeStatus_e.AvailableCoffee);
+    // }, this.coffeeTimer_ms);
   }
 }
