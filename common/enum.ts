@@ -3,3 +3,8 @@ export enum CoffeeStatus_e {
     , PassingCoffee
     , AvailableCoffee
 }
+
+export enum CoffeeMakerAction_e {
+    PassingCoffee
+    , ConsumeCoffee
+}
