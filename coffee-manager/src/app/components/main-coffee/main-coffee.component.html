@@ -1,10 +1,10 @@
-<div class="main-coffee">
+<div fxFill fxLayout="column">
     <!-- HEADER -->
-    <div class="header align-center">
+    <div class="header" fxLayoutAlign="center center">
         <img src="../assets/Logo_SYNECO.svg" style="height: 70%;">
     </div>
     <!-- STATUS -->
-    <div class="bar-status align-end" [style.background]="coffeeMakerStatus_color">
+    <div class="bar-status" fxLayoutAlign="end center" [style.background]="coffeeMakerStatus_color">
         <p class="status-text margin-text-end">{{coffeeMakerStatus_text}}</p>
     </div>
     <!-- ÁREA CENTRAL -->
@@ -14,7 +14,7 @@
         <button  mat-raised-button class="pass-btn" (click)="passCoffee()">PASSAR CAFÉ</button>
     </div>
     <!-- RODAPÉ -->
-    <div class="footer align-center">
+    <div class="footer" fxLayoutAlign="center center">
         <p class="name-text">SKA</p>
     </div>
 </div>
