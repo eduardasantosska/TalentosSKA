@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoffeeStatus_e } from '../../../../../common/enum';
+import { CoffeeMakerEvents } from '../../../../../common/models/CoffeeMakerEvents'
 @Component({
   selector: 'app-main-coffee',
   templateUrl: './main-coffee.component.html',
@@ -16,6 +17,7 @@ export class MainCoffeeComponent implements OnInit {
 
   ngOnInit(): void {
     this.formatCoffeeStatus(CoffeeStatus_e.NoCoffee);
+    new CoffeeMakerEvents(1, 1);
   }
 
   formatCoffeeStatus(coffeeStatus: CoffeeStatus_e) {
