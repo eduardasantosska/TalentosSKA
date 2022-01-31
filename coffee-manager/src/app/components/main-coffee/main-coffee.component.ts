@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CoffeeStatus_e } from '../../../../../common/enum';
+import { CoffeeMakerAction_e, CoffeeStatus_e } from '../../../../../common/enum';
 import { CoffeeMakerEvents } from '../../../../../common/models/CoffeeMakerEvents'
 import { DialogService } from '../../services/dialog.service'; 
 @Component({
@@ -15,10 +15,10 @@ export class MainCoffeeComponent implements OnInit {
   coffeeMakerStatus_color: string;
   coffeeTimer_ms: number = (5 * 1000);
 
-  totalQtyCoffee: number;
-  actualQtyCoffee: number;
-  lastQtyCoffee: number;
-  coffeeMakerEventsList: CoffeeMakerEvents[];
+  totalQtyCoffee: number = 0;
+  actualQtyCoffee: number = 0;
+  lastQtyCoffee: number = 0;
+  coffeeMakerEventsList: CoffeeMakerEvents[] = [];
 
   constructor(private dialogService: DialogService) { }
 
@@ -81,17 +81,34 @@ export class MainCoffeeComponent implements OnInit {
 
   /* passCoffee
     Função chamada ao clicar em passar café
+    Abre a dialog perguntando a quantidade de café
     Seta o status para café sendo passado
     Aciona o timer referente ao café
+    Insere o registro no histórico
+    Atualiza quantidade de café total e café disponivel
     Ao finalizar, atualiza para café disponível
     Não retorna nenhum dado
   */
   passCoffee(): void {
     this.dialogService.openDialog().then((qty) => {
+      this.formatCoffeeStatus(CoffeeStatus_e.PassingCoffee);
+      setTimeout(() => {
+        this.registerCoffeeMakerEvent(CoffeeMakerAction_e.PassingCoffee, +qty);
+        this.totalQtyCoffee = +qty;
+        this.actualQtyCoffee = +qty;
+        this.formatCoffeeStatus(CoffeeStatus_e.AvailableCoffee);
+      }, this.coffeeTimer_ms);
     });
-    // this.formatCoffeeStatus(CoffeeStatus_e.PassingCoffee);
-    // setTimeout(() => {
-    //   this.formatCoffeeStatus(CoffeeStatus_e.AvailableCoffee);
-    // }, this.coffeeTimer_ms);
+  }
+
+  /* registerCoffeeMakerEvent
+    Função para registrar os eventos da cafeteira
+    Recebe a ação (que é enum) e a quantidade (numero)
+    Insere na lista de historico da cafeteira
+    Não retorna dados
+  */
+  registerCoffeeMakerEvent(action: CoffeeMakerAction_e, qty: number): void {
+    this.coffeeMakerEventsList
+    .push(new CoffeeMakerEvents(action, qty));
   }
 }
