@@ -7,20 +7,17 @@ import { DialogComponent } from '../components/dialog/dialog.component';
 })
 export class DialogService {
 
-  animal: string;
-  name: string;
-
   constructor(public dialog: MatDialog) { }
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(DialogComponent, {
-      width: '250px',
-      data: {name: this.name, animal: this.animal},
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.animal = result;
+  openDialog(): Promise<string> {
+    return new Promise((res, rej) => {
+      const dialogRef = this.dialog.open(DialogComponent, {
+        width: '400px'
+      });
+  
+      dialogRef.afterClosed().subscribe(result => {
+        return res(result);
+      });
     });
   }
 }

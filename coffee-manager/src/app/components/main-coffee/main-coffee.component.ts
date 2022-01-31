@@ -87,7 +87,8 @@ export class MainCoffeeComponent implements OnInit {
     Não retorna nenhum dado
   */
   passCoffee(): void {
-    this.dialogService.openDialog();
+    this.dialogService.openDialog().then((qty) => {
+    });
     // this.formatCoffeeStatus(CoffeeStatus_e.PassingCoffee);
     // setTimeout(() => {
     //   this.formatCoffeeStatus(CoffeeStatus_e.AvailableCoffee);

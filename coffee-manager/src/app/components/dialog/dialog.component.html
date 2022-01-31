@@ -1,10 +1,10 @@
 <div mat-dialog-content>
   <p>Qual a quantidade de café?</p>
-  <mat-form-field appearance="fill">
+  <mat-form-field fxFill>
     <input matInput [(ngModel)]="qty">
   </mat-form-field>
 </div>
-<div mat-dialog-actions>
+<div mat-dialog-actions fxLayoutAlign="end center">
   <button mat-button (click)="onNoClick()">Cancelar</button>
   <button mat-button [mat-dialog-close]="qty" cdkFocusInitial>Ok</button>
 </div>
