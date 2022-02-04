@@ -7,4 +7,8 @@ router.get('/', (req, res, next) => {
     coffeeManagerController.getCoffee(req, res);
 });
 
+router.post('/', (req, res, next) => {
+    coffeeManagerController.postCoffee(req, res);
+});
+
 export default router
