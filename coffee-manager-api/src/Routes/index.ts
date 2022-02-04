@@ -11,4 +11,12 @@ router.post('/', (req, res, next) => {
     coffeeManagerController.postCoffee(req, res);
 });
 
+router.put('/:id', (req, res, next) => {
+    coffeeManagerController.putCoffee(req, res);
+});
+
+router.delete('/:id', (req, res, next) => {
+    coffeeManagerController.deleteCoffee(req, res);
+});
+
 export default router
