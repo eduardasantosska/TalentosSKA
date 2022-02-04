@@ -1,6 +1,8 @@
 import app from 'express';
 const router = app.Router();
 
-router.get('/', () => { console.log('Minha primeira rota!') });
+router.get('/', (req, res) => {
+    return res.send('Minha primeira rota!');
+});
 
 export default router
