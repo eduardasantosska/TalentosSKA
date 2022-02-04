@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CoffeeMakerAction_e, CoffeeStatus_e } from '../../../../../common/enum';
 import { CoffeeMakerEvents } from '../../../../../common/models/CoffeeMakerEvents'
 import { DialogService } from '../../services/dialog.service'; 
+import { RoutesService } from '../../services/routes.service';
+
 @Component({
   selector: 'app-main-coffee',
   templateUrl: './main-coffee.component.html',
@@ -20,7 +22,7 @@ export class MainCoffeeComponent implements OnInit {
   lastQtyCoffee: number = 0;
   coffeeMakerEventsList: CoffeeMakerEvents[] = [];
 
-  constructor(private dialogService: DialogService) { }
+  constructor(private dialogService: DialogService, private routesService: RoutesService) { }
 
   /* ngOnInit
     Função de inicialização
@@ -90,15 +92,19 @@ export class MainCoffeeComponent implements OnInit {
     Não retorna nenhum dado
   */
   passCoffee(): void {
-    this.dialogService.openDialog().then((qty) => {
-      this.formatCoffeeStatus(CoffeeStatus_e.PassingCoffee);
-      setTimeout(() => {
-        this.registerCoffeeMakerEvent(CoffeeMakerAction_e.PassingCoffee, +qty);
-        this.totalQtyCoffee = +qty;
-        this.actualQtyCoffee = +qty;
-        this.formatCoffeeStatus(CoffeeStatus_e.AvailableCoffee);
-      }, this.coffeeTimer_ms);
+    this.routesService.getCoffeeMakerEvents()
+    .subscribe((result) => {
+      console.log(result);
     });
+    // this.dialogService.openDialog().then((qty) => {
+    //   this.formatCoffeeStatus(CoffeeStatus_e.PassingCoffee);
+    //   setTimeout(() => {
+    //     this.registerCoffeeMakerEvent(CoffeeMakerAction_e.PassingCoffee, +qty);
+    //     this.totalQtyCoffee = +qty;
+    //     this.actualQtyCoffee = +qty;
+    //     this.formatCoffeeStatus(CoffeeStatus_e.AvailableCoffee);
+    //   }, this.coffeeTimer_ms);
+    // });
   }
 
   /* registerCoffeeMakerEvent

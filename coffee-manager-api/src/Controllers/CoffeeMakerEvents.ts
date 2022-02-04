@@ -9,8 +9,8 @@ export class CoffeeMakerEventsController {
     }
 
     registerCoffeMakerEvent(req: Request | any, res: Response) {
-        const event: CoffeeMakerEvents = req.body.event;
+        const event: CoffeeMakerEvents = req.body;
         console.log(event);
-        res.send('Registro inserido: ' + event);
+        res.send('Registro inserido');
     }
 }
