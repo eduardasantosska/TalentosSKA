@@ -1,22 +1,14 @@
 import app from 'express';
-import { CoffeeManagerController } from '../Controllers/CoffeeManager';
+import { CoffeeMakerEventsController } from '../Controllers/CoffeeMakerEvents';
 const router = app.Router();
-const coffeeManagerController: CoffeeManagerController = new CoffeeManagerController();
+const coffeeMakerEventsController: CoffeeMakerEventsController = new CoffeeMakerEventsController();
 
-router.get('/', (req, res, next) => {
-    coffeeManagerController.getCoffee(req, res);
+router.get('/coffeeMakerEvents', (req, res, next) => {
+    coffeeMakerEventsController.getAllCoffeeMakerEvents(req, res);
 });
 
-router.post('/', (req, res, next) => {
-    coffeeManagerController.postCoffee(req, res);
-});
-
-router.put('/:id', (req, res, next) => {
-    coffeeManagerController.putCoffee(req, res);
-});
-
-router.delete('/:id', (req, res, next) => {
-    coffeeManagerController.deleteCoffee(req, res);
+router.post('/coffeeMakerEvents', (req, res, next) => {
+    coffeeMakerEventsController.registerCoffeMakerEvent(req, res);
 });
 
 export default router
