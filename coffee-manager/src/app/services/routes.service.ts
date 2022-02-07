@@ -9,6 +9,6 @@ export class RoutesService {
   constructor(public http: HttpClient) { }
 
   getCoffeeMakerEvents() {
-    return this.http.get('https://localhost:8001/coffeeMakerEvents');
+    return this.http.get('http://localhost:8001/coffeeMakerEvents', {responseType: 'text'});
   }
 }
