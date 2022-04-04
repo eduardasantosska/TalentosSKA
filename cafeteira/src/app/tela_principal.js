@@ -1,10 +1,5 @@
-let num = 10;
+let simples = 'Teste';
+let duplas = "Teste";
 
-inicio();
-
-inicio();
-
-function inicio() {
-    // console.log("Incremento: ", ++num);
-    console.log("Decremento: ", --num)
-}
+console.log('Simples: ', simples);
+console.log("Duplas: ", duplas);
