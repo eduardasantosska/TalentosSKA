@@ -1,4 +1,3 @@
-const num1 = 1;
-const num2 = 2;
-
-console.log(`Somando ${num1} com ${num2} teremos ${num1 + num2}`);
+const operador = (1>3) || (8<10);
+console.log("Resultado: ", operador);
+// Resultado: true
