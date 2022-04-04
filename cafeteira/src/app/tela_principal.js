@@ -1,2 +1,2 @@
-const num = 3.4e5;
+const num = 1_000_000;
 console.log("Num: ", num);
