@@ -1,6 +1,2 @@
-inicio();
-
-function inicio() {
-    let tipoDinamico = 4;
-    tipoDinamico = "Mudando para string";
-}
+const num = 3.4e5;
+console.log("Num: ", num);
