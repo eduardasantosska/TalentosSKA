@@ -1,11 +1,10 @@
-const numNaN = Number('Teste');
-console.log("numNaN: ", numNaN);
-console.log("é NaN: ", isNaN(numNaN));
+let num = 10;
 
-const numInfinity = 6/0;
-console.log("\nnumInfinity: ", numInfinity);
-console.log("é Infinity: ", numInfinity == Infinity);
+inicio();
 
-console.log("\nisInfinity nunNaN: ", isFinite(numNaN));
-console.log("isInfinity numInfinity: ", isFinite(numInfinity));
-console.log("isInfinity válido: ", isFinite(4));
+inicio();
+
+function inicio() {
+    // console.log("Incremento: ", ++num);
+    console.log("Decremento: ", --num)
+}
