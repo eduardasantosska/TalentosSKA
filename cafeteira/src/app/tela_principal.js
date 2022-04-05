@@ -1,3 +1,2 @@
-const operador = (1>3) || (8<10);
-console.log("Resultado: ", operador);
-// Resultado: true
+const nomes = ["Amanda", "Talita", "Marcele", "Larissa"];
+console.log("Quantidade de nomes: ", nomes.length);
