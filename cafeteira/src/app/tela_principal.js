@@ -1,13 +1,23 @@
-const arrayExemplo = [1, 2, 3, 4];
+const objAluno = {
+    nome: "Camila"
+    , idade: 16
+    , telefone: 51985456889
+}
 
-// map: criar um novo array a partir do primeiro
-const novoArray = arrayExemplo.map((valor) => valor-1);
-console.log("arrayExemplo: ", arrayExemplo);
-console.log("novoArray: ", novoArray);
+// Recuperar valor do objeto
+const pNome = "nome";
+const pIdade = "idade";
 
-// filter: criar um novo array de itens pares
-const arrayPares = arrayExemplo.filter((valor) => valor%2 === 0);
-console.log("arrayPares: ", arrayPares);
+console.log("1: ", objAluno.nome);
+console.log("2: ", objAluno["nome"]);
+console.log("3: ", objAluno[pNome]);
 
-// find: encontrar um elemento
-console.log("elemento 2: ", arrayExemplo.find((valor) => valor == 2));
+// Adicionar ou atualizar valor
+objAluno.idade = 17;
+objAluno["idade"] = 17;
+objAluno[pIdade] = 17;
+console.log("Idade atualizada: ", objAluno);
+
+// Apagar uma propriedade
+delete objAluno.telefone
+console.log("Remover telefone: ", objAluno);
