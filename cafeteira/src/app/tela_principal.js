@@ -1,8 +1,13 @@
-const nomes = new Array();
-nomes.push("Amanda", "Talita", "Marcele", "Larissa");
+const arrayExemplo = [1, 2, 3, 4];
 
-// Includes(): verifica se um array contem um valor
-console.log("Nomes possui Talita: ", nomes.includes("Talita"));
+// map: criar um novo array a partir do primeiro
+const novoArray = arrayExemplo.map((valor) => valor-1);
+console.log("arrayExemplo: ", arrayExemplo);
+console.log("novoArray: ", novoArray);
 
-// IndexOf(): acha o index de um valor
-console.log("Index de Talita: ", nomes.indexOf("Talita"));
+// filter: criar um novo array de itens pares
+const arrayPares = arrayExemplo.filter((valor) => valor%2 === 0);
+console.log("arrayPares: ", arrayPares);
+
+// find: encontrar um elemento
+console.log("elemento 2: ", arrayExemplo.find((valor) => valor == 2));
