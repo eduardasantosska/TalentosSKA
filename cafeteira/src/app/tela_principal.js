@@ -9,3 +9,6 @@ console.log("Posição 0: ", nomes[0]);
 // splice(posição, qtd itens)
 nomes.splice(1, 1);
 console.log("Nomes: ", nomes);
+
+// Para verificar se é um array
+console.log("É um array? ", Array.isArray(nomes));
