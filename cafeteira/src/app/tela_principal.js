@@ -1,2 +1,2 @@
-const nomes = ["Amanda", "Talita", "Marcele", "Larissa"];
-console.log("Quantidade de nomes: ", nomes.length);
+const nomes = new Array();
+nomes.push("Amanda", "Talita", "Marcele", "Larissa");
