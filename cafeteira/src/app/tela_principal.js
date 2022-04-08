@@ -1,9 +1,9 @@
-let listaNome = ["Amanda"];
+let num = 0;
 
-function adicionaNome(lista, nome) {
-    lista.push(nome);
+function incrementaValor(numero) {
+    ++numero;
 }
 
-console.log("Num antes da função: ", listaNome);
-adicionaNome(listaNome, "Clara");
-console.log("Num depois da função: ", listaNome);
+console.log("Num antes da função: ", num);
+incrementaValor(num);
+console.log("Num depois da função: ", num);
