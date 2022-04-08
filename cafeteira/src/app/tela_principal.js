@@ -1,9 +1,10 @@
-let num = 0;
-
-function incrementaValor(numero) {
-    ++numero;
+function soma(valor1, valor2) {
+    return valor1+valor2;
+    console.log("Saiu da função!")
 }
 
-console.log("Num antes da função: ", num);
-incrementaValor(num);
-console.log("Num depois da função: ", num);
+v1 = 1;
+v2 = 3;
+valorSomado = soma(v1, v2);
+
+console.log(`Soma dos valores ${v1} e ${v2} = ${valorSomado}`);
