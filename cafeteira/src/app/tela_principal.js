@@ -1,8 +1,6 @@
-const alunas = ["Ana", "Bruna", "Carla"];
-
-let i=0;
-while(i<alunas.length) {
-    console.log(alunas[i]);
-    i++;
+function primeiraFuncao (parametro1) {
+    // instruções
+    console.log("Minha primeira função, mensagem: ", parametro1)
 }
 
+primeiraFuncao("Oi, mundo!");
