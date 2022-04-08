@@ -1,6 +1,9 @@
-function soma(valor1, valor2) {
+// function soma(valor1, valor2) {
+//     return valor1+valor2;
+// }
+
+const soma = (valor1, valor2) => {
     return valor1+valor2;
-    console.log("Saiu da função!")
 }
 
 v1 = 1;
