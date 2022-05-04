@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainCoffeeComponent } from './components/main-coffee/main-coffee.component';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { DialogMessageComponent } from './components/dialog-message/dialog-message.component';
 
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
@@ -18,7 +19,8 @@ import {MatInputModule} from '@angular/material/input';
   declarations: [
     AppComponent,
     MainCoffeeComponent,
-    DialogComponent
+    DialogComponent,
+    DialogMessageComponent
   ],
   imports: [
     MatButtonModule,

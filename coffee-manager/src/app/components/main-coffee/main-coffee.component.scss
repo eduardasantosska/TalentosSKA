@@ -23,7 +23,7 @@ p {
 }
 
 .name-text {
-    font-size: 2em; 
+    font-size: 2em;
     color: #11547E;
 }
 
@@ -32,8 +32,8 @@ p {
 }
 
 .qty-indicator-text {
-    font-weight: normal; 
-    font-size: 1.2em; 
+    font-weight: normal;
+    font-size: 1.2em;
 }
 
 .consume-btn {
@@ -44,7 +44,11 @@ p {
     background-color: #86CE84;
 }
 
-.pass-btn, .consume-btn {
+.historic-btn {
+  background-color: cadetblue;
+}
+
+.pass-btn, .consume-btn, .historic-btn {
     height: 7%;
     color: white;
 }

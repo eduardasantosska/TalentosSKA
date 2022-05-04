@@ -15,7 +15,10 @@ export class DialogComponent {
     @Inject(MAT_DIALOG_DATA) public data: any,
   ) {}  
 
-  onNoClick(): void {
-    this.dialogRef.close(null);
+  dialogResult(valid: boolean) {
+    if(valid)
+      this.dialogRef.close({ qty: this.qty, valid});
+    else
+      this.dialogRef.close({ model: 'close', valid });
   }
 }

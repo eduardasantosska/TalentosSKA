@@ -10,8 +10,9 @@
     <!-- ÁREA CENTRAL -->
     <div class="main-informations">
         <p class="qty-indicator-text">DISPONÍVEL: {{actualQtyCoffee}} / {{totalQtyCoffee}} xic.</p>
-        <button  mat-raised-button class="consume-btn">CONSUMIR CAFÉ</button>
-        <button  mat-raised-button class="pass-btn" (click)="passCoffee()">PASSAR CAFÉ</button>
+        <button  mat-raised-button class="consume-btn" [disabled]="coffeeMakerStatus!=2" (click)="consumeCoffee()">CONSUMIR CAFÉ</button>
+        <button  mat-raised-button class="pass-btn" [disabled]="coffeeMakerStatus!=0" (click)="passCoffee()">PASSAR CAFÉ</button>
+        <!-- <button  mat-raised-button class="historic-btn" (click)="logHistoric()">LOG CONSUMO</button> -->
     </div>
     <!-- RODAPÉ -->
     <div class="footer" fxLayoutAlign="center center">
